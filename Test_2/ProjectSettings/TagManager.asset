@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - puzzle
+  - trump
+  - Projectile
+  - apple
   layers:
   - Default
   - TransparentFX

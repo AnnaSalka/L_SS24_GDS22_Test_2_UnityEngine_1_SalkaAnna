@@ -12,7 +12,6 @@ public class SceneChange : MonoBehaviour
     }
     public void Scene_ApplePuzzle()
     {
-        //_doneScreenScript.doneScreen.SetActive(false);
         _doneScreenScript.isDoneScreen = false;
         SceneManager.LoadSceneAsync(0);
     }

@@ -8,6 +8,8 @@ public class trump_spawn_script : MonoBehaviour
     [SerializeField] private Vector3 finishPoint;
     [SerializeField] private float distance;
     [SerializeField] private bool isNull = false;
+
+    [SerializeField] private bool isShooted = false;
  
 
     // Start is called before the first frame update
@@ -21,27 +23,36 @@ public class trump_spawn_script : MonoBehaviour
     void Update()
     {
         
-
-        if (isNull == false)
+        if (isShooted == false)
         {
-            distance = Vector3.Distance(gameObject.transform.position, finishPoint);
-
-            if (distance > 3)
+            if (isNull == false)
             {
-                isNull = false;
-                gameObject.transform.position = new Vector3(gameObject.transform.position.x - 0.05f, 0, 2);
+                distance = Vector3.Distance(gameObject.transform.position, finishPoint);
+
+                if (distance > 3)
+                {
+                    isNull = false;
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x - 0.05f, 0, 2);
+                }
+                else
+                {
+
+                    isNull = true;
+                }
             }
             else
             {
-                
-                isNull = true;
+                gameObject.transform.position = spawnPoint;
+                isNull = false;
             }
         }
-        else
-        {
-            gameObject.transform.position = spawnPoint;
-            isNull = false;
-        }
         
+
+        //---------------------
+
+        if (gameObject.GetComponent<Animator>().enabled == false)
+        {
+            isShooted = true;
+        }
     }
 }

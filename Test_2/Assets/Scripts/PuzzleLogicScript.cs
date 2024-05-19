@@ -28,6 +28,11 @@ public class PuzzleLogicScript : MonoBehaviour
     static public bool R_Up = false;
     static public bool R_Down = false;
 
+    [SerializeField] private GameObject indicator1;
+    [SerializeField] private GameObject indicator2;
+    [SerializeField] private GameObject indicator3;
+    [SerializeField] private GameObject indicator4;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +54,7 @@ public class PuzzleLogicScript : MonoBehaviour
         {
             apple_L_Down.transform.position = origPosition_l_down;
             L_Down = true;
+            indicator1.SetActive(true);
             print("links unten");
             
         }
@@ -58,6 +64,7 @@ public class PuzzleLogicScript : MonoBehaviour
         {
             apple_L_Up.transform.position = origPosition_l_up;
             L_Up = true;
+            indicator2.SetActive(true);
             print("links oben");
             
         }
@@ -67,6 +74,7 @@ public class PuzzleLogicScript : MonoBehaviour
         {
             apple_R_Down.transform.position = origPosition_r_down;
             R_Down = true;
+            indicator3.SetActive(true);
             print("rechts unten");
             
         }
@@ -76,6 +84,7 @@ public class PuzzleLogicScript : MonoBehaviour
         {
             apple_R_Up.transform.position = origPosition_r_up;
             R_Up = true;
+            indicator4.SetActive(true);
             print("rechts oben");
             
         }
