@@ -23,9 +23,9 @@ public class trump_spawn_script : MonoBehaviour
     void Update()
     {
         
-        if (isShooted == false)
+        if (isShooted == false) //wenn dei Figur von den Apfel nicht getroffen ist...
         {
-            if (isNull == false)
+            if (isNull == false) //soll die Bewegung erstelltv sein
             {
                 distance = Vector3.Distance(gameObject.transform.position, finishPoint);
 
@@ -40,7 +40,7 @@ public class trump_spawn_script : MonoBehaviour
                     isNull = true;
                 }
             }
-            else
+            else //oder wen ziel erreicht ist, soll die Figur zum Startposotion respawnen
             {
                 gameObject.transform.position = spawnPoint;
                 isNull = false;

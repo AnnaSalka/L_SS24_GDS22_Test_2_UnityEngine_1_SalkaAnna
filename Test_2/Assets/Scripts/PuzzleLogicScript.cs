@@ -40,15 +40,15 @@ public class PuzzleLogicScript : MonoBehaviour
          L_Down = false;
          R_Up = false;
          R_Down = false;
-        SavePosition();   
-        RandomPosition();  
+        SavePosition();   //originele Position von allen Stücken wird gespeichert
+        RandomPosition();  //die Ecken werden random verteilt
         
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        //für jede einzehle Ecke wird die Distance abgefragt 
         distApple_l_down = Vector3.Distance(origPosition_l_down, apple_L_Down.transform.position);
         if (distApple_l_down <= 0.3f)
         {
@@ -91,7 +91,7 @@ public class PuzzleLogicScript : MonoBehaviour
 
     }
 
-    private void RandomPosition()
+    private void RandomPosition() //random Positionierung
     {
         apple_L_Up.transform.position = new Vector3(Random.Range(7f, -7f), Random.Range(4f, -2.5f), 0);
         apple_L_Down.transform.position = new Vector3(Random.Range(7f, -7f), Random.Range(4f, -2.5f), 0);
@@ -100,7 +100,7 @@ public class PuzzleLogicScript : MonoBehaviour
 
     }
 
-    private void SavePosition()
+    private void SavePosition() //speichern Position 
     {
         origPosition_l_down = apple_L_Down.transform.position;
         origPosition_l_up = apple_L_Up.transform.position;

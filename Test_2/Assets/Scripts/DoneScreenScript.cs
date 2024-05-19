@@ -21,12 +21,12 @@ public class DoneScreenScript : MonoBehaviour
 
     void Update()
     {
-        
+        // Anzeige des Done-screens
         if (isDoneScreen!)
         {
             doneScreen.SetActive(false);
         }
-
+        //nur wewnn alle 4 Bools true sind
         if (PuzzleLogicScript.L_Down && PuzzleLogicScript.L_Up && PuzzleLogicScript.R_Down && PuzzleLogicScript.R_Up)
         {
             doneScreen.SetActive(true);
